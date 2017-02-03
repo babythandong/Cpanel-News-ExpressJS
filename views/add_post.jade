@@ -1,0 +1,29 @@
+extends layout
+block content
+    .wrapper.wrapper-content.animated.fadeInRight
+        
+       .loginscreen.text-center.animated.fadeInDown
+            h3 Add posts to IC+
+            p Add posts to see it in action.
+            form.m-t(role='form', action='/posts/add', method='post',enctype='multipart/form-data')
+                .form-group
+                    input.form-control(type='text', name='title', placeholder='Title', required='')
+                .form-group
+                    select.form-control(name='category')
+                        if catagories
+                            each item in catagories
+                                option(value='#{item.slug}') #{item.name}
+                        else
+                            option(value='Không có danh mục') Không có danh mục
+                .form-group
+                    input.form-control(type='file',name='image',placeholder='Thumbnail')
+                .form-group
+                    textarea.form-control(rows='5', name='intro',placeholder='Intro')
+                .form-group
+                    textarea.form-control(rows='5', name='content',placeholder='Content',id='content')
+                    script(src='/ckeditor/ckeditor.js')
+                    script.
+                        CKEDITOR.replace('content')
+                .form-group
+                    input.form-control(type='text',placeholder='Author',name='author')
+                input.btn.btn-primary.block.full-width.m-b(type='submit', name='submit', value='Create')

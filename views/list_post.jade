@@ -1,0 +1,37 @@
+extends layout
+block content
+    .wrapper.wrapper-content.animated.fadeIn
+    .row
+        .col-lg-12
+            if posts
+                each post in posts
+                    .ibox
+                        .ibox-title
+                            h5 #{post.title}
+                            |                     
+                            .ibox-tools
+                                a.collapse-link
+                                    i.fa.fa-chevron-up
+                                    |                         
+                                a.dropdown-toggle(data-toggle='dropdown', href='#')
+                                    i.fa.fa-wrench
+                                    |                         
+                                a.close-link
+                                i.fa.fa-times
+                        |                 
+                        .ibox-content
+                            .slimScrollDiv(style='position: relative; overflow: hidden; width: auto; height: 200px;')
+                                .scroll_content(style='overflow: hidden; width: auto; height: 200px;')
+                                    .col-lg-3
+                                        img.img-thumbnail(src='/images/uploads/#{post.img_name}')
+                                    .col-lg-9
+                                        p 
+                                            |#{post.intro}
+                                        |                         
+                                        a.btn.btn-default(href='/posts/detail') Read now
+                                    .slimScrollBar(style='background: rgb(0, 0, 0); width: 7px; position: absolute; top: 54px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 145.985px;')
+                                    |                         
+                                    .slimScrollRail(style='width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;')
+                        .ibox-footer
+                            p Create on 
+                                a(href='/categories/show/#{post.category}') #{post.category}        

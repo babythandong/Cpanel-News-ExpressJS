@@ -1,0 +1,6 @@
+extends layout
+block content
+    if posts
+        p Có tất cả #{count} bài viết
+        each post in posts
+            p #{post.title}

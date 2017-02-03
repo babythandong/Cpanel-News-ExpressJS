@@ -1,0 +1,508 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    | &#x9;&#x9;
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    | &#x9;&#x9;
+    title= title
+    | &#x9;&#x9;
+    link(href='/css/bootstrap.min.css', rel='stylesheet')
+    | &#x9;&#x9;
+    link(href='/font-awesome/css/font-awesome.css', rel='stylesheet')
+    | &#x9;&#x9;
+    link(href='/css/animate.css', rel='stylesheet')
+    | &#x9;&#x9;
+    link(href='/css/style.css', rel='stylesheet')
+  | &#x9;
+  body
+    #wrapper
+      nav.navbar-default.navbar-static-side(role='navigation')
+        .sidebar-collapse
+          ul#side-menu.nav.metismenu
+            li.nav-header
+              if user
+              .dropdown.profile-element
+                span
+                  img.img-circle(alt='image', src='img/profile_small.jpg',style='width:48px;height:48px')
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                a.dropdown-toggle(data-toggle='dropdown', href='#')
+                  span.clear
+                    span.block.m-t-xs
+                      strong.font-bold Icecream
+                    |  
+                    span.text-muted.text-xs.block
+                      | Development 
+                      b.caret
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                ul.dropdown-menu.animated.fadeInRight.m-t-xs
+                  li
+                    a(href='profile.html') Profile
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li
+                    a(href='contacts.html') Contacts
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li
+                    a(href='mailbox.html') Mailbox
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li.divider
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li
+                    a(href='/users/logout') Logout
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              .logo-element
+                | IN+
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            li
+              a(href='index.html')
+                i.fa.fa-th-large
+                |  
+                span.nav-label Dashboards
+                |  
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            
+            li
+              a(href='#')
+                i.fa.fa-user
+                |  
+                span.nav-label Users
+                span.fa.arrow
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              ul.nav.nav-second-level.collapse
+                li
+                  a(href='/users') Danh sách
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                li
+                  a(href='/users/add') Thêm mới
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                li
+                  a(href='/users/edit') Cập nhật
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            
+            li
+              a(href='#')
+                i.fa.fa-edit
+                |  
+                span.nav-label Danh mục
+                span.fa.arrow
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              ul.nav.nav-second-level.collapse
+                li
+                  a(href='/categories') Danh sách
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                li
+                  a(href='/categories/add') Thêm mới
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                li
+                  a(href='') Cập nhật
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            
+            li
+              a(href='#')
+                i.fa.fa-files-o
+                |  
+                span.nav-label Bài viết
+                span.fa.arrow
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              ul.nav.nav-second-level.collapse
+                li
+                  a(href='/posts') Danh sách
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                li
+                  a(href='/posts/add') Thêm mới
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                li
+                  a(href='') Cập nhật
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            li
+              a(href='#')
+                i.fa.fa-user
+                |  
+                span.nav-label Liên hệ
+      | &#x9;&#x9;&#x9;
+      #page-wrapper.gray-bg
+        .row.border-bottom
+          nav.navbar.navbar-static-top.white-bg(role='navigation', style='margin-bottom: 0')
+            .navbar-header
+              a.navbar-minimalize.minimalize-styl-2.btn.btn-primary(href='#')
+                i.fa.fa-bars
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              form.navbar-form-custom(role='search', action='search_results.html')
+                .form-group
+                  input#top-search.form-control(type='text', placeholder='Search for something...', name='top-search')
+            | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+            ul.nav.navbar-top-links.navbar-right
+              li
+                span.m-r-sm.text-muted.welcome-message Welcome to ExpressJS+ Admin Theme.
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              li.dropdown
+                a.dropdown-toggle.count-info(data-toggle='dropdown', href='#')
+                  i.fa.fa-envelope
+                  |  
+                  span.label.label-warning 16
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                ul.dropdown-menu.dropdown-messages
+                  li
+                    .dropdown-messages-box
+                      a.pull-left(href='profile.html')
+                        img.img-circle(alt='image', src='/img/a7.jpg')
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      div
+                        small.pull-right 46h ago
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        strong Mike Loreipsum
+                        |  started following 
+                        strong Monica Smith
+                        | .
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        br
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        small.text-muted 3 days ago at 7:58 pm - 10.06.2014
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li.divider
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li
+                    .dropdown-messages-box
+                      a.pull-left(href='profile.html')
+                        img.img-circle(alt='image', src='/img/a4.jpg')
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      div
+                        small.pull-right.text-navy 5h ago
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        strong Chris Johnatan Overtunk
+                        |  started following 
+                        strong Monica Smith
+                        | .
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        br
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        small.text-muted Yesterday 1:21 pm - 11.06.2014
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li.divider
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li
+                    .dropdown-messages-box
+                      a.pull-left(href='profile.html')
+                        img.img-circle(alt='image', src='img/profile.jpg')
+                      | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                      div
+                        small.pull-right 23h ago
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        strong Monica Smith
+                        |  love 
+                        strong Kim Smith
+                        | .
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        br
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        small.text-muted 2 days ago at 2:30 am - 11.06.2014
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li.divider
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li
+                    .text-center.link-block
+                      a(href='mailbox.html')
+                        i.fa.fa-envelope
+                        |  
+                        strong Read All Messages
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              li.dropdown
+                a.dropdown-toggle.count-info(data-toggle='dropdown', href='#')
+                  i.fa.fa-bell
+                  |  
+                  span.label.label-primary 8
+                | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                ul.dropdown-menu.dropdown-alerts
+                  li
+                    a(href='mailbox.html')
+                      div
+                        i.fa.fa-envelope.fa-fw
+                        |  You have 16 messages
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        span.pull-right.text-muted.small 4 minutes ago
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li.divider
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li
+                    a(href='profile.html')
+                      div
+                        i.fa.fa-twitter.fa-fw
+                        |  3 New Followers
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        span.pull-right.text-muted.small 12 minutes ago
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li.divider
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li
+                    a(href='grid_options.html')
+                      div
+                        i.fa.fa-upload.fa-fw
+                        |  Server Rebooted
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        span.pull-right.text-muted.small 4 minutes ago
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li.divider
+                  | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                  li
+                    .text-center.link-block
+                      a(href='notifications.html')
+                        strong See All Alerts
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+                        i.fa.fa-angle-right
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              li
+                a(href='/users/logout')
+                  i.fa.fa-sign-out
+                  |  Log out
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;
+              li
+                a.right-sidebar-toggle
+                  i.fa.fa-tasks
+        | &#x9;&#x9;&#x9;&#x9;
+        block content
+        | &#x9;&#x9;&#x9;&#x9;
+        .footer
+          .pull-right
+            | 10GB of 
+            strong 250GB
+            |  Free.
+          | &#x9;&#x9;&#x9;&#x9;&#x9;
+          div
+            strong Copyright
+            |  Example Company &copy; 2014-2015
+      // Noi dung right-sidebar
+    // Mainly scripts
+    script(src='/js/jquery-2.1.1.js')
+    | &#x9;&#x9;
+    script(src='/js/bootstrap.min.js')
+    | &#x9;&#x9;
+    script(src='/js/plugins/metisMenu/jquery.metisMenu.js')
+    | &#x9;&#x9;
+    script(src='/js/plugins/slimscroll/jquery.slimscroll.min.js')
+    // Flot
+    script(src='/js/plugins/flot/jquery.flot.js')
+    | &#x9;&#x9;
+    script(src='/js/plugins/flot/jquery.flot.tooltip.min.js')
+    | &#x9;&#x9;
+    script(src='/js/plugins/flot/jquery.flot.spline.js')
+    | &#x9;&#x9;
+    script(src='/js/plugins/flot/jquery.flot.resize.js')
+    | &#x9;&#x9;
+    script(src='/js/plugins/flot/jquery.flot.pie.js')
+    | &#x9;&#x9;
+    script(src='/js/plugins/flot/jquery.flot.symbol.js')
+    | &#x9;&#x9;
+    script(src='/js/plugins/flot/jquery.flot.time.js')
+    // Peity
+    script(src='/js/plugins/peity/jquery.peity.min.js')
+    | &#x9;&#x9;
+    script(src='/js/demo/peity-demo.js')
+    // Custom and plugin javascript
+    script(src='/js/inspinia.js')
+    | &#x9;&#x9;
+    script(src='/js/plugins/pace/pace.min.js')
+    // jQuery UI
+    script(src='/js/plugins/jquery-ui/jquery-ui.min.js')
+    // Jvectormap
+    script(src='/js/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js')
+    | &#x9;&#x9;
+    script(src='/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js')
+    // EayPIE
+    script(src='/js/plugins/easypiechart/jquery.easypiechart.js')
+    // Sparkline
+    script(src='/js/plugins/sparkline/jquery.sparkline.min.js')
+    // Sparkline demo data
+    script(src='/js/demo/sparkline-demo.js')
+    | &#x9;&#x9;
+    script.
+      $(document).ready(function() {
+      $('.chart').easyPieChart({
+      barColor: '#f8ac59',
+      //                scaleColor: false,
+      scaleLength: 5,
+      lineWidth: 4,
+      size: 80
+      });
+      $('.chart2').easyPieChart({
+      barColor: '#1c84c6',
+      //                scaleColor: false,
+      scaleLength: 5,
+      lineWidth: 4,
+      size: 80
+      });
+      var data2 = [
+      [gd(2012, 1, 1), 7],
+      [gd(2012, 1, 2), 6],
+      [gd(2012, 1, 3), 4],
+      [gd(2012, 1, 4), 8],
+      [gd(2012, 1, 5), 9],
+      [gd(2012, 1, 6), 7],
+      [gd(2012, 1, 7), 5],
+      [gd(2012, 1, 8), 4],
+      [gd(2012, 1, 9), 7],
+      [gd(2012, 1, 10), 8],
+      [gd(2012, 1, 11), 9],
+      [gd(2012, 1, 12), 6],
+      [gd(2012, 1, 13), 4],
+      [gd(2012, 1, 14), 5],
+      [gd(2012, 1, 15), 11],
+      [gd(2012, 1, 16), 8],
+      [gd(2012, 1, 17), 8],
+      [gd(2012, 1, 18), 11],
+      [gd(2012, 1, 19), 11],
+      [gd(2012, 1, 20), 6],
+      [gd(2012, 1, 21), 6],
+      [gd(2012, 1, 22), 8],
+      [gd(2012, 1, 23), 11],
+      [gd(2012, 1, 24), 13],
+      [gd(2012, 1, 25), 7],
+      [gd(2012, 1, 26), 9],
+      [gd(2012, 1, 27), 9],
+      [gd(2012, 1, 28), 8],
+      [gd(2012, 1, 29), 5],
+      [gd(2012, 1, 30), 8],
+      [gd(2012, 1, 31), 25]
+      ];
+      var data3 = [
+      [gd(2012, 1, 1), 800],
+      [gd(2012, 1, 2), 500],
+      [gd(2012, 1, 3), 600],
+      [gd(2012, 1, 4), 700],
+      [gd(2012, 1, 5), 500],
+      [gd(2012, 1, 6), 456],
+      [gd(2012, 1, 7), 800],
+      [gd(2012, 1, 8), 589],
+      [gd(2012, 1, 9), 467],
+      [gd(2012, 1, 10), 876],
+      [gd(2012, 1, 11), 689],
+      [gd(2012, 1, 12), 700],
+      [gd(2012, 1, 13), 500],
+      [gd(2012, 1, 14), 600],
+      [gd(2012, 1, 15), 700],
+      [gd(2012, 1, 16), 786],
+      [gd(2012, 1, 17), 345],
+      [gd(2012, 1, 18), 888],
+      [gd(2012, 1, 19), 888],
+      [gd(2012, 1, 20), 888],
+      [gd(2012, 1, 21), 987],
+      [gd(2012, 1, 22), 444],
+      [gd(2012, 1, 23), 999],
+      [gd(2012, 1, 24), 567],
+      [gd(2012, 1, 25), 786],
+      [gd(2012, 1, 26), 666],
+      [gd(2012, 1, 27), 888],
+      [gd(2012, 1, 28), 900],
+      [gd(2012, 1, 29), 178],
+      [gd(2012, 1, 30), 555],
+      [gd(2012, 1, 31), 993]
+      ];
+      var dataset = [{
+      label: "Number of orders",
+      data: data3,
+      color: "#1ab394",
+      bars: {
+      show: true,
+      align: "center",
+      barWidth: 24 * 60 * 60 * 600,
+      lineWidth: 0
+      }
+      }, {
+      label: "Payments",
+      data: data2,
+      yaxis: 2,
+      color: "#1C84C6",
+      lines: {
+      lineWidth: 1,
+      show: true,
+      fill: true,
+      fillColor: {
+      colors: [{
+      opacity: 0.2
+      }, {
+      opacity: 0.4
+      }]
+      }
+      },
+      splines: {
+      show: false,
+      tension: 0.6,
+      lineWidth: 1,
+      fill: 0.1
+      },
+      }];
+      var options = {
+      xaxis: {
+      mode: "time",
+      tickSize: [3, "day"],
+      tickLength: 0,
+      axisLabel: "Date",
+      axisLabelUseCanvas: true,
+      axisLabelFontSizePixels: 12,
+      axisLabelFontFamily: 'Arial',
+      axisLabelPadding: 10,
+      color: "#d5d5d5"
+      },
+      yaxes: [{
+      position: "left",
+      max: 1070,
+      color: "#d5d5d5",
+      axisLabelUseCanvas: true,
+      axisLabelFontSizePixels: 12,
+      axisLabelFontFamily: 'Arial',
+      axisLabelPadding: 3
+      }, {
+      position: "right",
+      clolor: "#d5d5d5",
+      axisLabelUseCanvas: true,
+      axisLabelFontSizePixels: 12,
+      axisLabelFontFamily: ' Arial',
+      axisLabelPadding: 67
+      }],
+      legend: {
+      noColumns: 1,
+      labelBoxBorderColor: "#000000",
+      position: "nw"
+      },
+      grid: {
+      hoverable: false,
+      borderWidth: 0
+      }
+      };
+      function gd(year, month, day) {
+      return new Date(year, month - 1, day).getTime();
+      }
+      var previousPoint = null,
+      previousLabel = null;
+      $.plot($("#flot-dashboard-chart"), dataset, options);
+      var mapData = {
+      "US": 298,
+      "SA": 200,
+      "DE": 220,
+      "FR": 540,
+      "CN": 120,
+      "AU": 760,
+      "BR": 550,
+      "IN": 200,
+      "GB": 120,
+      };
+      $('#world-map').vectorMap({
+      map: 'world_mill_en',
+      backgroundColor: "transparent",
+      regionStyle: {
+      initial: {
+      fill: '#e4e4e4',
+      "fill-opacity": 0.9,
+      stroke: 'none',
+      "stroke-width": 0,
+      "stroke-opacity": 0
+      }
+      },
+      series: {
+      regions: [{
+      values: mapData,
+      scale: ["#1ab394", "#22d6b1"],
+      normalizeFunction: 'polynomial'
+      }]
+      },
+      });
+      });

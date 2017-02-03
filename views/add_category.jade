@@ -1,0 +1,16 @@
+extends layout
+block content
+    .wrapper.wrapper-content.animated.fadeInRight
+        
+       .loginscreen.text-center.animated.fadeInDown
+            h3 Add category to IC+
+            p Add category to see it in action.
+            form.m-t(role='form', action='/categories/add', method='post',enctype='multipart/form-data')
+                .form-group
+                    input.form-control(type='text', name='name', placeholder='Name', required='')
+                .form-group
+                    input.form-control(type='text',placeholder='Author',name='author')
+                .form-group
+                    textarea.form-control(rows='5', name='description',placeholder='Address')
+                
+                input.btn.btn-primary.block.full-width.m-b(type='submit', name='submit', value='Create')

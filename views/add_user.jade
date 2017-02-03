@@ -1,0 +1,28 @@
+extends layout
+block content
+    .wrapper.wrapper-content.animated.fadeInRight
+        
+       .loginscreen.text-center.animated.fadeInDown
+            h3 Add member to IC+
+            p Add member to see it in action.
+            form.m-t(role='form', action='/users/add', method='post',enctype='multipart/form-data')
+                .form-group
+                    input.form-control(type='text', name='name', placeholder='Name', required='')
+                .form-group
+                    input.form-control(type='email', placeholder='Email', required='', name='email')
+                .form-group
+                    input.form-control(type='password', placeholder='Password', required='', name='password')
+                .form-group
+                    input.form-control(type='text',placeholder='Company',name='company')
+                .form-group
+                    select.form-control(name='job')
+                        option(value='CEO') CEO
+                        option(value='Developer') Developer
+                        option(value='Designer') Designer
+                        option(value='Digital') Digital
+                .form-group
+                    input.form-control(type='file',name='image')
+                .form-group
+                    textarea.form-control(rows='5', name='address',placeholder='Address')
+                
+                input.btn.btn-primary.block.full-width.m-b(type='submit', name='submit', value='Register')

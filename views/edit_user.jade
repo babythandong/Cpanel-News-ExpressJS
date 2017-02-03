@@ -1,0 +1,39 @@
+extends layout
+block content
+    .wrapper.wrapper-content.animated.fadeInRight
+        
+       .loginscreen.text-center.animated.fadeInDown
+            h3 Edit member to IC+
+            p Edit member to see it in action.
+            if post
+                form.m-t(role='form', action='', method='post',enctype='multipart/form-data')
+                    .form-group
+                        input.form-control(type='text', name='name', placeholder='Name', required='',value='#{post.name}')
+                    .form-group
+                        input.form-control(type='email', placeholder='Email', required='', name='email',value='#{post.email}')
+                    .form-group
+                        input.form-control(type='text',placeholder='Company',name='company',value='#{post.company}')
+                    .form-group
+                        select.form-control(name='job')
+                            if(post.job=='CEO')
+                                option(value='CEO',selected ) CEO
+                            else
+                                option(value='CEO') CEO
+                            if(post.job=='Developer')
+                                option(value='Developer',selected) Developer
+                            else
+                                option(value='Developer') Developer
+                            if(post.job=='Designer')
+                                option(value='Designer',selected) Designer
+                            else
+                                option(value='Designer') Designer
+                            if(post.job=='Digital')
+                                option(value='Digital',selected) Digital
+                            else
+                                option(value='Digital') Digital
+                    .form-group
+                        input.form-control(type='file',name='image')
+                    .form-group
+                        textarea.form-control(rows='5', name='address',placeholder='Address') #{post.address}
+                    
+                    input.btn.btn-primary.block.full-width.m-b(type='submit', name='submit', value='Edit')

@@ -1,0 +1,39 @@
+extends layout
+block content
+    .wrapper.wrapper-content.animated.fadeInRight
+        
+       .loginscreen.text-center.animated.fadeInDown
+            h3 View category to IC+
+            p View category to see it in action.
+            if category
+                form(method='post',action='categories/edit')
+                    .form-group
+                        .col-lg-2
+                            label Name
+                        .col-lg-9
+                            input.form-control(type='text', name='name', placeholder='Name', value='#{category.name}')
+                            br
+                    .form-group
+                        .col-lg-2
+                            label Author
+                        .col-lg-9
+                            input.form-control(type='text',placeholder='Author',name='author',value='#{category.author}')
+                            br
+                    .form-group
+                        .col-lg-2
+                            label Description
+                        .col-lg-9
+                            textarea.form-control(rows='5', name='description',placeholder='Address') #{category.description}
+                            br
+                    .form-group
+                        .col-lg-2
+                            label Created at
+                        .col-lg-9
+                            input.form-control(type='text',name='author',value='#{moment(category.date).format("DD.MM.YYYY")}')
+                            br
+                    .form-group
+                        .col-lg-12
+                            input.btn.btn-outline.btn-primary.fomr-control(type='submit',name='submit',value='Edit')
+
+                
+                

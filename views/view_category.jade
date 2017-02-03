@@ -1,0 +1,38 @@
+extends layout
+block content
+    .wrapper.wrapper-content.animated.fadeInRight
+        
+       .loginscreen.text-center.animated.fadeInDown
+            h3 View category to IC+
+            p View category to see it in action.
+            if category
+                .form-group
+                    .col-lg-2
+                        label Name
+                    .col-lg-9
+                        input.form-control(type='text', name='name', placeholder='Name', disabled="disabled",value='#{category.name}')
+                        br
+                .form-group
+                    .col-lg-2
+                        label Author
+                    .col-lg-9
+                        input.form-control(type='text',placeholder='Author',disabled="disabled",name='author',value='#{category.author}')
+                        br
+                .form-group
+                    .col-lg-2
+                        label Description
+                    .col-lg-9
+                        textarea.form-control(rows='5', name='description',disabled="disabled",placeholder='Address') #{category.description}
+                        br
+                .form-group
+                    .col-lg-2
+                        label Created at
+                    .col-lg-9
+                        input.form-control(type='text',name='author',disabled="disabled",value='#{moment(category.date).format("DD.MM.YYYY")}')
+                        br
+                .form-group
+                    .col-lg-12
+                        a.btn.btn-outline.btn-primary(href='/categories',style='') Quay lại
+
+                
+                

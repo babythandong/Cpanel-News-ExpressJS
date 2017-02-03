@@ -1,0 +1,36 @@
+extends layout
+block content
+    .wrapper.wrapper-content.animated.fadeInRight
+        .row
+            if users
+                each user,i in users
+                    .col-lg-4
+                        span(style='float:right;color:#000;padding-right:7px;padding-top:5px')
+                            a(href='/users/del/#{user._id}') 
+                                i.fa.fa-times
+                        span(style='float:right;color:#000;padding-right:3px;padding-top:5px')
+                            a(href='/users/edit/#{user._id}') 
+                                i.fa.fa-wrench
+                        .contact-box
+                            a(href='profile.html')
+                            .col-sm-4
+                                .text-center
+                                img.img-circle.m-t-xs.img-responsive(alt='image', src="/images/uploads/#{user.img_name}")
+                                |                             
+                                .m-t-xs.font-bold #{user.job}
+                            |                     
+                            .col-sm-8
+                                h3
+                                strong #{user.name}
+                                |                         
+                                p
+                                i.fa.fa-map-marker
+                                |  Bai Chay Street
+                                |                         
+                                address
+                                strong #{user.company}
+                                br
+                                |                             #{user.address}
+                                br
+                            |                     
+                            .clearfix
